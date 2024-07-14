@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="script.js" defer></script>
+    <title>Döviz Çevirici</title>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex flex-col justify-between">
+    <div class="container mx-auto">
+
+        <div class="container mx-auto">
+            <div class="border mt-5 bg-white rounded-lg shadow-lg p-10 max-w-2xl mx-auto h-[500px] flex items-center justify-center">
+                <div>
+                    <h1 class="text-center font-bold text-2xl mb-8">Döviz Çevirici</h1>
+                    <form class="flex flex-col gap-6">
+                        <div class="flex justify-center gap-4">
+                            <input type="text" id="input" class="h-12 w-60 border rounded-lg p-3 transform transition-transform duration-300 hover:scale-110">
+                            <select id="currency-from" class="h-12 w-32 border rounded-lg cursor-pointer">
+                                <option value="TRY">TRY</option>
+                                <option value="USD">USD</option>
+                                <option value="EUR">EUR</option>
+                                <option value="GBP">GBP</option>
+                                <option value="JPY">JPY</option>
+                                <option value="AUD">AUD</option>
+                                <option value="CAD">CAD</option>
+                                <option value="CHF">CHF</option>
+                                <option value="CNY">CNY</option>
+                                <option value="RUB">RUB</option>
+                                <option value="SEK">SEK</option>
+                                <option value="NOK">NOK</option>
+                                <option value="GEL">GEL</option>
+                            </select>
+                        </div>
+                        <div class="flex justify-center gap-4">
+                            <input type="text" id="output" class="h-12 w-60 border rounded-lg p-3 transform transition-transform duration-300 hover:scale-110">
+                            <select id="currency-to" class="h-12 w-32 border rounded-lg cursor-pointer">
+                                <option value="USD">USD</option>
+                                <option value="EUR">EUR</option>
+                                <option value="GBP">GBP</option>
+                                <option value="JPY">JPY</option>
+                                <option value="AUD">AUD</option>
+                                <option value="CAD">CAD</option>
+                                <option value="CHF">CHF</option>
+                                <option value="CNY">CNY</option>
+                                <option value="RUB">RUB</option>
+                                <option value="SEK">SEK</option>
+                                <option value="NOK">NOK</option>
+                                <option value="GEL">GEL</option>
+                                <option value="TRY">TRY</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col justify-center items-center md:flex-row flex-wrap gap-8 mt-8">
+            <div class="border w-full md:w-1/4 bg-white rounded-lg shadow-lg p-6 cursor-pointer transform transition-transform duration-300 hover:scale-105 min-h-[200px]"
+                id="dolar">
+                <h1 class="text-center font-bold text-xl">Dolar</h1>
+                <p class="text-center mt-2 text-2xl" id="dolar-value">#</p>
+            </div>
+
+            <div class="border w-full md:w-1/4 bg-white rounded-lg shadow-lg p-6 cursor-pointer transform transition-transform duration-300 hover:scale-105 min-h-[200px]"
+                id="euro">
+                <h1 class="text-center font-bold text-xl">Euro</h1>
+                <p class="text-center mt-2 text-2xl" id="euro-value">#</p>
+            </div>
+
+            <div class="border w-full md:w-1/4 bg-white rounded-lg shadow-lg p-6 cursor-pointer transform transition-transform duration-300 hover:scale-105 min-h-[200px]"
+                id="sterlin">
+                <h1 class="text-center font-bold text-xl">Sterlin</h1>
+                <p class="text-center mt-2 text-2xl" id="sterlin-value">#</p>
+            </div>
+
+            <div class="border w-full md:w-1/4 bg-white rounded-lg shadow-lg p-6 cursor-pointer transform transition-transform duration-300 hover:scale-105 min-h-[200px]"
+                id="yen">
+                <h1 class="text-center font-bold text-xl">Japon Yeni</h1>
+                <p class="text-center mt-2 text-2xl" id="yen-value">#</p>
+            </div>
+
+            <div class="border w-full md:w-1/4 bg-white rounded-lg shadow-lg p-6 cursor-pointer transform transition-transform duration-300 hover:scale-105 min-h-[200px]"
+                id="aud">
+                <h1 class="text-center font-bold text-xl">Avustralya Doları</h1>
+                <p class="text-center mt-2 text-2xl" id="aud-value">#</p>
+            </div>
+
+            <div class="border w-full md:w-1/4 bg-white rounded-lg shadow-lg p-6 cursor-pointer transform transition-transform duration-300 hover:scale-105 min-h-[200px]"
+                id="cad">
+                <h1 class="text-center font-bold text-xl">Kanada Doları</h1>
+                <p class="text-center mt-2 text-2xl" id="cad-value">#</p>
+            </div>
+
+            <div class="border w-full md:w-1/4 bg-white rounded-lg shadow-lg p-6 cursor-pointer transform transition-transform duration-300 hover:scale-105 min-h-[200px]"
+                id="chf">
+                <h1 class="text-center font-bold text-xl">İsviçre Frangı</h1>
+                <p class="text-center mt-2 text-2xl" id="chf-value">#</p>
+            </div>
+
+            <div class="border w-full md:w-1/4 bg-white rounded-lg shadow-lg p-6 cursor-pointer transform transition-transform duration-300 hover:scale-105 min-h-[200px]"
+                id="cny">
+                <h1 class="text-center font-bold text-xl">Çin Yuanı</h1>
+                <p class="text-center mt-2 text-2xl" id="cny-value">#</p>
+            </div>
+
+            <div class="border w-full md:w-1/4 bg-white rounded-lg shadow-lg p-6 cursor-pointer transform transition-transform duration-300 hover:scale-105 min-h-[200px]"
+                id="rub">
+                <h1 class="text-center font-bold text-xl">Rus Rublesi</h1>
+                <p class="text-center mt-2 text-2xl" id="rub-value">#</p>
+            </div>
+
+            <div class="border w-full md:w-1/4 bg-white rounded-lg shadow-lg p-6 cursor-pointer transform transition-transform duration-300 hover:scale-105 min-h-[200px]"
+                id="sek">
+                <h1 class="text-center font-bold text-xl">İsveç Kronu</h1>
+                <p class="text-center mt-2 text-2xl" id="sek-value">#</p>
+            </div>
+
+            <div class="border w-full md:w-1/4 bg-white rounded-lg shadow-lg p-6 cursor-pointer transform transition-transform duration-300 hover:scale-105 min-h-[200px]"
+                id="nok">
+                <h1 class="text-center font-bold text-xl">Norveç Kronu</h1>
+                <p class="text-center mt-2 text-2xl" id="nok-value">#</p>
+            </div>
+
+            <div class="border w-full md:w-1/4 bg-white rounded-lg shadow-lg p-6 cursor-pointer transform transition-transform duration-300 hover:scale-105 min-h-[200px]"
+                id="gel">
+                <h1 class="text-center font-bold text-xl">Gürcistan Larisi</h1>
+                <p class="text-center mt-2 text-2xl" id="gel-value">#</p>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="bg-gray-100 py-4">
+        <div class="container mx-auto text-center">
+            <div>
+                Designed by Furkan İpek
+            </div>
+            <div class="mt-2">
+                <a href="https://www.instagram.com/furkaan.ipek" class="mx-1"><i class="fa fa-instagram fa-2x"
+                        aria-hidden="true"></i></a>
+                <a href="https://github.com/furkansalihipek"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
